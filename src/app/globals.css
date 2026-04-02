@@ -1,26 +1,183 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-border: var(--border-color);
+  --color-muted: var(--muted);
+  --color-info-bg: var(--info-bg);
+  --color-info-border: var(--info-border);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-border: var(--warning-border);
+  --color-tip-bg: var(--tip-bg);
+  --color-tip-border: var(--tip-border);
+  --color-error-bg: var(--error-bg);
+  --color-error-border: var(--error-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #faf9f7;
+  --foreground: #1a1a2e;
+  --primary: #4a3580;
+  --primary-light: #6b5ba7;
+  --primary-dark: #2d1f5e;
+  --accent: #c4956a;
+  --accent-light: #e8d5c0;
+  --surface: #ffffff;
+  --surface-alt: #f5f3f0;
+  --border-color: #e5e2dd;
+  --muted: #6b7280;
+  --info-bg: #eff6ff;
+  --info-border: #93c5fd;
+  --warning-bg: #fffbeb;
+  --warning-border: #fbbf24;
+  --tip-bg: #f0fdf4;
+  --tip-border: #86efac;
+  --error-bg: #fef2f2;
+  --error-border: #fca5a5;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Prose styles for educational content */
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.prose h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.prose th {
+  background: var(--surface-alt);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.prose td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.prose tr:hover td {
+  background: var(--surface-alt);
+}
+
+/* Callout boxes */
+.callout {
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid;
+}
+
+.callout-info {
+  background: var(--info-bg);
+  border-color: var(--info-border);
+}
+
+.callout-warning {
+  background: var(--warning-bg);
+  border-color: var(--warning-border);
+}
+
+.callout-tip {
+  background: var(--tip-bg);
+  border-color: var(--tip-border);
+}
+
+.callout-error {
+  background: var(--error-bg);
+  border-color: var(--error-border);
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #2d1f5e 0%, #4a3580 40%, #6b5ba7 70%, #8b7ec8 100%);
+}
+
+/* Subtle grid pattern */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(74, 53, 128, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 53, 128, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
